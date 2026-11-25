@@ -54,15 +54,23 @@ and try again, rather than invent an answer.
 ## Step 13: Reflection
 
 What does Chroma own in this workflow?
-
+Chroma handles the vector storage and retrieval. It stores the embedded facilities documents
+and return the most relevant text for a users question.
 
 What does the prompt builder own?
-
+The prompt builder is in charge of setting up the instructions, labeled context, user question,
+response requirements, and fallback rule which allows to models to return an answer grounded in the
+approved documentation instead of just guessing.
 
 What does the Flask route coordinate?
-
+The flask route coordinates the HTTP request and response. It is in charge of validating the JSON body, calling the RAG service, handling model errors, and returning structured JSON
 
 Why does the API response include sources?
-
+The response includes sources so that the answer given can be verified by checking the source 
+documentation provided. Which helps build trust in the response and allows developers to 
+test and debug if the response shows signs of hallucination or unhelpful output.
 
 What would break if the route sent the user question directly to the model?
+If the question was sent directly to the model the response would not be grounded in company policy. It may sound confident but the response would be fabricated and not helpful and in the
+worst case an employee may take the ungrounded advice and end up doing something that goes against
+company policy which could lead to termination of employment.
