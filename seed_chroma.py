@@ -1,4 +1,5 @@
 """Seed the local Chroma database for the Flask RAG API lesson."""
+"""Runs the seeding workflow from the terminal."""
 
 from chroma_store import seed_collection
 

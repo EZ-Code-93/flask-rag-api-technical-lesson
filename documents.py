@@ -1,4 +1,5 @@
 """Facility operations documents for the Flask RAG API lesson."""
+"""Stores the small facilities knowledge base used in this lesson."""
 
 from typing import Dict, List
 
